@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: arigesazdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arigesazdocker
+  template:
+    metadata:
+      labels:
+        app: arigesazdocker 
+    spec:
+      containers:
+        - name: arigesazdocker 
+          image: acrado111.azurecr.io/arigesazdocker
+          ports:
+          - containerPort: 80
